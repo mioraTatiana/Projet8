@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Titre -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gestion_des_clients"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Champ NumCompte -->
+    <TextView
+        android:id="@+id/labelNumCompte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/num_compte"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/editTextNumCompte"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/hint_num_compte"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/labelNumCompte"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/labelNumCompte"
+        app:layout_constraintTop_toTopOf="@id/labelNumCompte" />
+
+    <!-- Champ Nom -->
+    <TextView
+        android:id="@+id/labelNom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nom"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/labelNumCompte"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp" />
+
+    <EditText
+        android:id="@+id/editTextNom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/hint_nom"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/labelNom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/labelNumCompte"
+        app:layout_constraintTop_toTopOf="@id/labelNom" />
+
+    <!-- Champ Solde -->
+    <TextView
+        android:id="@+id/labelSolde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/solde"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/labelNom"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp" />
+
+    <EditText
+        android:id="@+id/editTextSolde"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/hint_solde"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/labelSolde"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/labelNumCompte"
+        app:layout_constraintTop_toTopOf="@id/labelSolde" />
+
+    <!-- Boutons -->
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/buttonLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/editTextSolde"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+
+        <Button
+            android:id="@+id/buttonAjout"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ajout" />
+
+        <Button
+            android:id="@+id/buttonModifier"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/modifier" />
+
+        <Button
+            android:id="@+id/buttonSupprimer"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/supprimer" />
+
+        <Button
+            android:id="@+id/buttonHistogramme"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/histogramme" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <!-- Tableau des données -->
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:stretchColumns="1,2,3"
+        app:layout_constraintTop_toBottomOf="@id/buttonLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/summaryLayout"
+        android:layout_margin="16dp">
+
+        <TableRow android:background="#DADADA">
+            <TextView
+                android:text="Num Compte"
+                android:textStyle="bold"
+                android:padding="8dp" />
+            <TextView
+                android:text="Nom"
+                android:textStyle="bold"
+                android:padding="8dp" />
+            <TextView
+                android:text="Solde"
+                android:textStyle="bold"
+                android:padding="8dp" />
+            <TextView
+                android:text="Obs"
+                android:textStyle="bold"
+                android:padding="8dp" />
+        </TableRow>
+
+        <!-- Les données seront ajoutées dynamiquement depuis le code Java/Kotlin -->
+    </TableLayout>
+
+    <!-- Résumé des soldes -->
+    <LinearLayout
+        android:id="@+id/summaryLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp"
+        android:background="#E0E0E0">
+
+        <TextView
+            android:id="@+id/totalSolde"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total: 0.00 €"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/maxSolde"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Max: 0.00 €"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/minSolde"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Min: 0.00 €"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

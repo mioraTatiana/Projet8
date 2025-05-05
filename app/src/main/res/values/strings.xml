@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Projet8</string>
+    <string name="gestion_des_clients">Gestion des clients</string>
+    <string name="num_compte">Num Compte :</string>
+    <string name="hint_num_compte">Entrez le numéro de compte</string>
+    <string name="nom">Nom :</string>
+    <string name="hint_nom">Entrez le nom</string>
+    <string name="solde">Solde :</string>
+    <string name="hint_solde">0.00</string>
+    <string name="ajout">Ajout</string>
+    <string name="modifier">Modifier</string>
+    <string name="supprimer">Supprimer</string>
+    <string name="histogramme">Histogramme</string>
+    <string name="total_default">Total: 0.00 €</string>
+    <string name="max_default">Max: 0.00 €</string>
+    <string name="min_default">Min: 0.00 €</string>
+</resources>
